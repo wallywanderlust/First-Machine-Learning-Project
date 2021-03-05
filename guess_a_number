@@ -1,0 +1,29 @@
+# This game is called Guess a Number. The goal of this project was to write code that would allow a user to guess a random number. 
+
+
+
+import random 
+
+rn = random.randint(0,100)
+win = False
+while win == False:    
+    guess = input("Enter Your Guess: ")        
+    if rn == int(guess):
+        print("You guessed the number! Would you like to play again?")
+        win == True
+        break
+                
+    elif int(guess) < rn:
+        print("Your guess is too low")
+              
+    elif int(guess) > rn:
+        print("Your guess is too high")
+        
+Enter Your Guess: 45
+Your guess is too low
+Enter Your Guess: 89
+Your guess is too high
+Enter Your Guess: 67
+Your guess is too high
+Enter Your Guess: 55
+You guessed the number! Would you like to play again?
