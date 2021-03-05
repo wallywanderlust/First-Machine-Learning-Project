@@ -1,0 +1,19 @@
+# The goal of this project was to write a function that can tell you whether a number is even or odd.
+
+
+def odd_even(number):
+    divided = number/2
+    if number == int(number) and divided == int(divided):
+        print("This number is even.")
+    if number == int(number) and divided != int(divided):
+        print("This number is odd.")
+        
+    elif number != int(number): 
+        print("This is not an integer")
+        
+odd_even(234568495)
+This number is odd.
+odd_even(299485396)
+This number is even.
+odd_even(382844.59)
+This is not an integer     
