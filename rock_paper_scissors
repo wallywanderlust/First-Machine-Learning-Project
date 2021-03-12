@@ -1,0 +1,60 @@
+#Below is code to play Rock, Paper, Scissors. If you want a description of my thought process and comments visit my blog. https://walterlearnspython.wordpress.com/2021/03/12/week-3-20-more-hours-rock-paper-scissors-project/
+
+import random
+from enum import IntEnum
+
+class Action(IntEnum):
+        Rock = 0
+        Paper = 1
+        Scissors = 2
+        
+def get_user_rps():
+        user_choice = input("Rock, Paper, Scissors...(rock[0], paper[1], scissors[2]): ")
+        selection = int(user_choice)
+        action = Action(selection)
+        return action 
+
+def get_computer_rps():
+        cpu_choice = random.randint(0, len(Action) - 1)
+        action = Action(cpu_choice)
+        return action 
+
+def find_winner(user_action, cpu_action):
+        if user_action == cpu_action :
+                print(f"Both players selected {user_action.name}. It's a tie!")        
+        elif user_action == Action.Rock:
+                if cpu_action == Action.Scissors:
+                        print("Rock obliterates scissors! You win!")
+                else:
+                        print("Paper engulfs rock! You lose.")
+        elif user_action == Action.Paper:
+                if cpu_action == Action.Rock:
+                        print("Paper engulfs rock! You win!")
+                else:
+                        print("Scissors slices through paper! You lose.")
+        elif user_action == Action.Scissors:
+                if cpu_action == Action.Paper:
+                        print("Scissors slices through paper! You win!")
+                else:
+                        print("Rock obliterates scissors! You lose.")
+                                        
+                
+while True:
+        try:
+                user_action = get_user_rps()
+        except ValueError as e:
+                range_str = f"[0, {len(Action) - 1}]"
+                print(f"Invalid selection. Enter a value in range {range_str}")
+                continue 
+        
+        cpu_action = get_computer_rps()
+        find_winner(user_action, cpu_action)
+        
+        play_again = input("Play again? (yes/no): ")
+        if play_again != "yes":
+                break        
+        
+        
+               
+
+
