@@ -57,4 +57,10 @@ while True:
         
                
 
+Rock, Paper, Scissors...(rock[0], paper[1], scissors[2]): 2
+Scissors slices through paper! You win!
+Play again? (yes/no): yes
+Rock, Paper, Scissors...(rock[0], paper[1], scissors[2]): 0
+Rock obliterates scissors! You win!
+Play again? (yes/no): no
 
